@@ -1,0 +1,88 @@
+---
+name: first-network-org1
+version: 1.0.0
+client:
+  organization: Org1
+  connection:
+    timeout:
+      peer:
+        endorser: '300'
+organizations:
+  Org1:
+    mspid: Org1MSP
+    peers:
+    - peer0.org1.esunego.com
+    - peer1.org1.esunego.com
+    certificateAuthorities:
+    - ca.org1.esunego.com
+peers:
+  peer0.org1.esunego.com:
+    url: grpcs://localhost:7051
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICVjCCAf2gAwIBAgIQHyHTuYc4f9jd8dVWpXxu2TAKBggqhkjOPQQDAjB2MQsw
+        CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+        YW5jaXNjbzEZMBcGA1UEChMQb3JnMS5lc3VuZWdvLmNvbTEfMB0GA1UEAxMWdGxz
+        Y2Eub3JnMS5lc3VuZWdvLmNvbTAeFw0xOTEwMjkwNzU3MDBaFw0yOTEwMjYwNzU3
+        MDBaMHYxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQH
+        Ew1TYW4gRnJhbmNpc2NvMRkwFwYDVQQKExBvcmcxLmVzdW5lZ28uY29tMR8wHQYD
+        VQQDExZ0bHNjYS5vcmcxLmVzdW5lZ28uY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0D
+        AQcDQgAEhRVJBJimOlaahMF4zoYJQRpIF2DallJlF2xDvhlwp1sLvrYOE6w+tLfo
+        C9Fgj8iziXIJQT0PVVMqx7xh1VvkOaNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1Ud
+        JQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1Ud
+        DgQiBCClM/fzrzmQiWK6mqX8j58ggXqr9uIKqydbTedHZ3M+MTAKBggqhkjOPQQD
+        AgNHADBEAiBZDb1//WMO38e1S7rDr6oPdt3t24T0hbxGyIYGZ9dZwAIgVGa1lz0o
+        1Nu/mWKAxQyix1MbFH7NjeCbrqrGq+pGckg=
+        -----END CERTIFICATE-----
+        
+    grpcOptions:
+      ssl-target-name-override: peer0.org1.esunego.com
+      hostnameOverride: peer0.org1.esunego.com
+  peer1.org1.esunego.com:
+    url: grpcs://localhost:8051
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICVjCCAf2gAwIBAgIQHyHTuYc4f9jd8dVWpXxu2TAKBggqhkjOPQQDAjB2MQsw
+        CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+        YW5jaXNjbzEZMBcGA1UEChMQb3JnMS5lc3VuZWdvLmNvbTEfMB0GA1UEAxMWdGxz
+        Y2Eub3JnMS5lc3VuZWdvLmNvbTAeFw0xOTEwMjkwNzU3MDBaFw0yOTEwMjYwNzU3
+        MDBaMHYxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQH
+        Ew1TYW4gRnJhbmNpc2NvMRkwFwYDVQQKExBvcmcxLmVzdW5lZ28uY29tMR8wHQYD
+        VQQDExZ0bHNjYS5vcmcxLmVzdW5lZ28uY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0D
+        AQcDQgAEhRVJBJimOlaahMF4zoYJQRpIF2DallJlF2xDvhlwp1sLvrYOE6w+tLfo
+        C9Fgj8iziXIJQT0PVVMqx7xh1VvkOaNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1Ud
+        JQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1Ud
+        DgQiBCClM/fzrzmQiWK6mqX8j58ggXqr9uIKqydbTedHZ3M+MTAKBggqhkjOPQQD
+        AgNHADBEAiBZDb1//WMO38e1S7rDr6oPdt3t24T0hbxGyIYGZ9dZwAIgVGa1lz0o
+        1Nu/mWKAxQyix1MbFH7NjeCbrqrGq+pGckg=
+        -----END CERTIFICATE-----
+        
+    grpcOptions:
+      ssl-target-name-override: peer1.org1.esunego.com
+      hostnameOverride: peer1.org1.esunego.com
+certificateAuthorities:
+  ca.org1.esunego.com:
+    url: https://localhost:7054
+    caName: ca-org1
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICUDCCAfegAwIBAgIQVeiU+mj2wGA1eLxzh7IWADAKBggqhkjOPQQDAjBzMQsw
+        CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+        YW5jaXNjbzEZMBcGA1UEChMQb3JnMS5lc3VuZWdvLmNvbTEcMBoGA1UEAxMTY2Eu
+        b3JnMS5lc3VuZWdvLmNvbTAeFw0xOTEwMjkwNzU3MDBaFw0yOTEwMjYwNzU3MDBa
+        MHMxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1T
+        YW4gRnJhbmNpc2NvMRkwFwYDVQQKExBvcmcxLmVzdW5lZ28uY29tMRwwGgYDVQQD
+        ExNjYS5vcmcxLmVzdW5lZ28uY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE
+        D+22zB6l3nflITep7gwAD0lH9pJfEknNGDoTzBzc54xfUu1sorGXk4VsvRLqluPl
+        apA+69tnqeQxVZUp2jBTraNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQG
+        CCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCBw
+        borbsUbjA6+Z22PKz1de5ZaiTedNqCWmYRwUbTynLDAKBggqhkjOPQQDAgNHADBE
+        AiA2rlAHXCBRWESdC8RsM0YHaWTzcueLBn+5PYsZwBEPoAIgQjE0SkQFiTEXqApa
+        su2XqrD6Ds/3aMLUmde/4Tr21q4=
+        -----END CERTIFICATE-----
+        
+    httpOptions:
+      verify: false
